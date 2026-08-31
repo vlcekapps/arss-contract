@@ -23,6 +23,12 @@ from live_drift import compare_provider, parse_centrum, parse_rozhlas  # noqa: E
 
 
 class ContractTest(unittest.TestCase):
+    def test_rss_directory_retains_its_cc0_source_notice(self) -> None:
+        notice = (ROOT / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
+        self.assertIn("Awesome RSS Feeds", notice)
+        self.assertIn("3a7a9e28943d28b8acb6d9197fb168a8be5267f6", notice)
+        self.assertIn("CC0 1.0 Universal", notice)
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.catalog = load_json(ROOT / "catalogs" / "guide_stations.json")
@@ -30,7 +36,7 @@ class ContractTest(unittest.TestCase):
 
     def test_complete_contract_validates(self) -> None:
         stats = validate_contract(ROOT)
-        self.assertEqual("1.0.0", stats["contractVersion"])
+        self.assertEqual("1.0.1", stats["contractVersion"])
         self.assertEqual(192, stats["stations"])
         self.assertEqual(128, stats["televisionStations"])
         self.assertEqual(64, stats["radioStations"])

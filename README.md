@@ -52,5 +52,6 @@ identifiers, private paths, or platform build artefacts.
 
 ## License
 
-ARSS Contract is available under the MIT License. Live providers retain all
-rights in their services and data; consumers must comply with provider terms.
+ARSS Contract is available under the MIT License except for third-party source
+data identified in `THIRD_PARTY_NOTICES.md`. Live providers retain all rights
+in their services and data; consumers must comply with provider terms.

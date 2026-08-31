@@ -1,6 +1,6 @@
 {
   "$schema": "./schemas/version.schema.json",
-  "contractVersion": "1.0.0",
+  "contractVersion": "1.0.1",
   "releasedAt": "2026-08-31",
   "minimumConsumerVersion": "1.0.0",
   "reference": {
